@@ -1,0 +1,6 @@
+name = My Contacts
+description = Creates custom contact lists fast
+core = "7.x"
+
+scripts[] = js/my_contacts_ajax.js
+

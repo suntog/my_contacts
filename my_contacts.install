@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * Implements of hook_schema().
+ */
+function my_contacts_schema() {
+  $schema['my_contacts'] = array(
+    'description' => t('Allow for users to make fast contact lists.'),
+    'fields' => array(
+      'mcid' => array(
+        'type' => 'serial',
+        'not null' => TRUE,
+        'description' => "Index for profile contacts id.",
+      ),
+      'uid' => array(
+        'description' => t('The user ID of user creating a contact'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'cid' => array(
+        'description' => t('The user ID of the contact'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'gid' => array(
+        'description' => t('Optional group ID of the contact'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => FALSE,
+      ),
+      'timestamp' => array(
+        'description' => t('The creation date timestamp.'),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE
+      ),
+    ),
+    'indexes' => array(
+      'mcid' => array('mcid'),
+    ),
+    'unique keys' => array(),
+  );
+
+  $schema['my_contacts_groups'] = array(
+    'description' => t('Allow for users to make fast contact lists.'),
+    'fields' => array(
+      'gid' => array(
+      'description' => t('Optional group Id of the contact'),
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'not null' => FALSE,
+     ),
+     'groupname' => array(
+        'description' => t('Optional group name of contacts'),
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+    ),
+    'indexes' => array(
+      'gid' => array('gid'),
+    ),
+    'unique keys' => array(),
+  );
+
+  return $schema;
+} 
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function my_contacts_uninstall() {
+  // Remove tables.
+  drupal_uninstall_schema('my_contacts');
+  drupal_uninstall_schema('my_contacts_groups');
+  drupal_set_message('My Contacts module was uninstalled.');
+
+}

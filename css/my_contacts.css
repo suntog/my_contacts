@@ -1,0 +1,79 @@
+/* - My Contacts Listing
+------------------------------------------------------------ */
+#my-contacts-block-expand-wrapper {
+  height: 25px;
+}
+
+#my-contacts-block-expand {
+  float: right;
+  display: none;
+}
+.block-my-contacts #my-contacts-block-expand {
+  display: block;
+}
+.my-contacts {
+  height: 30px;
+  border-top: 1px dotted gray;
+  padding: 5px 0;
+}
+.my-contacts:last-child {
+  border-bottom: 1px dotted gray;
+}
+.block-my-contacts .my-contacts.no-text {
+  display: inline-block;
+  width: 40px;
+  border: none;
+}
+.block-my-contacts .my-contacts.no-text .presence {
+  top: -10px;
+  left: 15px;
+}
+.block-my-contacts .my-contacts.no-text .username-button-wrapper,
+.block-my-contacts .my-contacts.no-text .username a {
+  display: none;
+}
+
+.block-my-contacts .my-contacts.no-text .username-wrapper .picture {
+  margin-right: 5px;
+}
+
+.my-contacts .username-wrapper {
+  float: left;
+  width: auto;
+  height: 0;
+}
+.my-contacts .username-wrapper .username {
+  float: left;
+  margin-top: 0px;
+  margin-left: 0px;
+  width: auto;
+}
+
+
+.my-contacts .username-button-wrapper .droogle-drive-create-invite-btn-wrapper,
+.my-contacts .username-button-wrapper .jabber-hangout-btn,
+.my-contacts .username-button-wrapper .email-btn,
+.my-contacts .username-button-wrapper .chat-btn {
+  float: right;
+  margin: 18px 0 0 0;
+  padding: 0;
+  width: 25px
+}
+.my-contacts .username-button-wrapper .jabber-hangout-btn {
+  margin-top: 17px;
+}
+.my-contacts .username-button-wrapper .droogle-drive-create-invite-btn-wrapper {
+  margin-top: 16.5px;
+}
+.my-contacts .username-button-wrapper .email-btn-a {
+  display: block;
+  width:25px;
+  height:15px;
+  padding: 2px 0 0 0;
+  background-position-y: -226px;
+}
+.my-contacts .username-button-wrapper .droogle-drive-create-invite-btn {
+  margin: 1.5px 0px 0px 2px;
+  height: 15px;
+  width: 15px;
+}
